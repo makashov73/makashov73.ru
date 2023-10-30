@@ -14,6 +14,11 @@ hr{
     position: relative;
     display: flex;
 }
+#language{
+    position: relative;
+    display:flex;
+    float: right;
+}
 #profile{
     flex: 15%;
     display: block;

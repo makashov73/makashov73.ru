@@ -3,23 +3,33 @@
     <title>
         Makashov Vladislav
     </title>
-    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Cutive+Mono|Open+Sans">
 <body>
-    <div id="inner-nav"></div>
+    <div id="inner-nav">
+        <form id="language">
+            <label for="lang-switch">
+                <span lang="en">Language:</span>
+                <span lang="ru">Язык: </span>
+            </label>
+            <select id="lang-switch">
+                <option value="en">English</option>
+                <option value="ru">Russian</option>
+            </select>
+        </form>
+    </div>
     <div id="container">
         <div id="profile">
             <div id="image">
                 <img id="profile-photo" src="images/profile.jpg" alt="Profile-Image">
-                <a href="#"><i class="fas fa-pen stroke-transparent"></i></a>
             </div>
             <p id="name">Makashov Vladislav<br><span id="email">makashov73@gmail.com</span></p>
             <p id="designation">QA Engineer<br><span id="college">MTS RED, Future Crew Team, Ulyanovsk, Russia</span></p>
             <div id="social-links"><a href="#"><i class="fab fa-facebook-f stroke-transparent"></i></a>
                 <a href="#"><i class="fab fa-twitter stroke-transparent"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in stroke-transparent"></i></a>
-                <a href="#"><i class="fab fa-github stroke-transparent"></i></a></div>
+                <a href="https://www.linkedin.com/in/mkv73/"><i class="fab fa-linkedin-in stroke-transparent"></i></a>
+                <a href="https://github.com/makashov73"><i class="fab fa-github stroke-transparent"></i></a></div>
             <hr width="100%">
             <div id="about">
                 <p style="display:inline;">About</p>
@@ -28,15 +38,11 @@
             <p id="education">Education<br><strong>Doctorate, Indian Institute of Information
                     Technology-Allahabad</strong></p>
             <p id="more-about">More about me<br><span>DUGC of Computer Science & Engineering Department</span></p>
-            <p id="telephone">Telephone<br><strong>0532-2271351</strong></p>
-            <p id="fax">Fax<br><strong>+91-532-25453441</strong></p>
+            <p id="telephone">Telephone<br><strong>+7 (937) 883 94 59</strong></p>
         </div>
         <div id="info-cards">
             <div class="card">
                 <p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Work Experience</p>
-            </div>
-            <div class="card">
-                <p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Workshop</p>
                 <ul>
                     <li>
                         <p class="tags">5 th IEEE Conference on Wireless Communication and Sensor
@@ -99,6 +105,15 @@
         </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+$('[lang]').hide();
+$('[lang="en"]').show();
+$('#lang-switch').change(function () { 
+    var lang = $(this).val(); 
+    $('[lang]').hide();
+    $('[lang="' + lang + '"]').show();
+});
+</script>
 </head>
-
 </html>
