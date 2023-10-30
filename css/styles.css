@@ -13,7 +13,6 @@ hr{
 #container{
     position: relative;
     display: flex;
-    border-radius: 24px;
 }
 #profile{
     flex: 15%;
@@ -138,6 +137,7 @@ strong,span{
     margin-bottom: 30px;
     padding: 15px 30px 30px 30px;
     background-color: #fff;
+    border-radius: 16px;
 }
 .card > p{
     color: #0e141e;
