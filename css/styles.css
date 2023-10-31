@@ -20,7 +20,7 @@ hr{
     float: right;
 }
 #profile{
-    flex: 15%;
+    flex: 5%;
     display: block;
     position: relative;
     margin: 5% 2% 0 10%;
@@ -44,6 +44,7 @@ hr{
     width: 128px;
     height: 128px;
     border-radius: 10px;
+    margin: auto;
 }
 #image > a{
     position: absolute;
@@ -80,7 +81,7 @@ hr{
     font-family: 'Open Sans', sans-serif;
 }
 #email{
-    font-size: 15px !important;
+    font-size: 16px !important;
     font-weight: bold !important;
     font-family: 'Cutive Mono',monospace;
 }
@@ -97,6 +98,7 @@ strong,span{
 }
 #social-links{
     margin-bottom: 12px;
+    display: flex;
 }
 #social-links a{
     margin: 0 10px;
@@ -111,6 +113,9 @@ strong,span{
 }
 .fab,.fas{
     color: whitesmoke;
+}
+.far{
+    font-size: 0.8em;
 }
 #about > a{
     top: 4px;
@@ -195,6 +200,7 @@ strong,span{
     }
     #profile{
         width: 90%;
+
     }
     .card{
         margin: 0 5%;
