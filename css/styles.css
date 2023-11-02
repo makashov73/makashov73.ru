@@ -3,6 +3,11 @@ html{
     font-family: 'Open Sans',sans-serif;
     background: whitesmoke;
 }
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 a{
     text-decoration: none;
     color: black;
@@ -13,10 +18,11 @@ hr{
 #container{
     position: relative;
     display: flex;
+    flex: 1 0 auto;
 }
 footer{
     display: flex;
-    position: absolute; 
+    position: fixed; 
     bottom: 0;
     width: 100%;
     text-align: center;
@@ -24,6 +30,7 @@ footer{
     font-size: 12px !important;
     font-weight: bold !important;
     font-family: 'Cutive Mono',monospace;
+    flex-shrink: 0;
 }
 #language{
     position: relative;
@@ -31,7 +38,7 @@ footer{
     float: right;
 }
 #profile{
-    flex: 5%;
+    flex: 0;
     display: block;
     position: relative;
     margin: 5% 2% 0 10%;
