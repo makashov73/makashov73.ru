@@ -1,13 +1,29 @@
 <!DOCTYPE html>
     <head>
+        <title>
+            Remote control
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Cutive+Mono|Open+Sans">
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+        <link rel="manifest" href="../favicon/site.webmanifest">
     </head>
     <body>
-        <button onclick="openURL('http://mkv73.ddns.net:1337')"><img alt="Archer AX55" src="../images/ax55.png" width="50%"><br>Archer AX55</button>
-        <button onclick="openURL('http://makashov73.ddns.net:1337')"><img alt="Archer C20" src="../images/c20.png" width="50%"><br>Archer C20</button>
-            <script>
-                function openURL(url) {
-                    window.open(url, '_blank');
-                }
-            </script>
+        <div id="container">
+            <button onclick="openURL('http://mkv73.ddns.net:1337')"><img alt="Archer AX55" src="../images/ax55.png"><p style="font-size:24px">Archer AX55</p></button>
+            <button onclick="openURL('http://makashov73.ddns.net:1337')"><img alt="Archer C20" src="../images/c20.png"><p style="font-size:24px">Archer C20</p></button>
+                <script>
+                    function openURL(url) {
+                        window.open(url, '_blank');
+                    }
+                </script>
+        </div>  
+        <footer>
+            mkv73 © 2023
+        </footer> 
     </body>
 </html>
