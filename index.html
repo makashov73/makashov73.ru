@@ -3,6 +3,7 @@
     <title>
         Makashov Vladislav
     </title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -23,6 +24,27 @@
                 <option value="ru">Russian</option>
             </select>
         </form>
+        <button id="downloadBtn">Download PDF</button>
+
+    <!-- JavaScript to convert HTML to PDF -->
+    <script>
+        document.getElementById("downloadBtn").addEventListener("click", function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://pdfcrowd.com/api/pdf/convert/html/");
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.responseType = "blob";
+            xhr.onload = function() {
+                var blob = xhr.response;
+                var link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = "download.pdf";
+                link.click();
+            };
+            var content = document.getElementById("content").outerHTML;
+            var data = "apikey=cbd6d821661852613e78ce73fa001eb0&html=" + encodeURIComponent(content);
+            xhr.send(data);
+        });
+    </script>
     </div>
     <div id="container">
         <div id="profile">
