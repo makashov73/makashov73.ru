@@ -194,6 +194,7 @@ strong,span{
 }
 .card > ul{
     list-style-type: none;
+    padding-inline-start: 5px;
 }
 .tags{
     font-size: 17px;
