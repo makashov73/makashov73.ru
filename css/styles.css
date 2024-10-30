@@ -18,10 +18,12 @@ button{
 hr{
     background: grey;
 }
-#container{
+#container {
     position: relative;
     display: flex;
-    max-width: 75%;
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: center;
 }
 footer{
     display: flex;
@@ -38,27 +40,31 @@ footer{
     flex-shrink: 0;
 }
 #inner-nav{
-    margin-right: 25%;
+    position: relative;
+    float: left;
+    display: flex;
 }
 #language{
     position: relative;
     display:flex;
     float: right;
 }
-#profile{
+#profile {
     flex: 0;
     display: block;
     position: relative;
-    margin: 10px 10px 0 25%;
     width: 100%;
     height: 100%;
+    margin-left: 20%;
+    margin-right: 10px;
 }
-#info-cards{
-    flex: 55%;
+#info-cards {
+    flex: 100%;
     display: block;
-    margin-top: 10px;
-    width: 25%;
+    max-width: 560px;
+    min-width: fit-content;
     height: 100%;
+    margin-right: 20%;
 }
 #image{
     position: relative;
@@ -68,7 +74,8 @@ footer{
     position: relative;
     width: 128px;
     height: 128px;
-    border-radius: 10px;
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
+    border-radius: 12px;
     margin: auto;
 }
 #image > a{
@@ -178,7 +185,7 @@ strong,span{
     overflow-x: hidden;
     padding: 0 0 0 30px;
     background-color: #fff;
-    border-radius: 16px;
+    border-radius: 12px;
 }
 .card > p{
     color: #0e141e;
@@ -204,8 +211,10 @@ strong,span{
 }
 .card > ul{
     list-style-type: none;
-    padding-inline-end: 25%;
     padding-inline-start: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .tags{
     font-size: 17px;
@@ -222,24 +231,45 @@ strong,span{
 .tags span span{
     color: #738f93;
 }
-@media screen and (max-width:1090px){
-    #profile{
-        margin: 10px 10px 0 0;
+/*
+@media screen and (max-width:1081px){
+    #profile {
+        flex: 0;
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
     }
-}
-@media screen and (max-width:850px){
+    #container {
+        position: relative;
+        display: flex;
+        max-width: 75%;
+        flex-direction: row;
+        justify-content: center;
+    }
+}*/
+@media screen and (max-width:1080px){
     #container{
         display: flex;
         flex-direction: column;
         align-items: center;
         max-width: 100%;
     }
+    #inner-nav {
+        margin-right: 0%;
+    }
     #profile, #info-cards{
-        width: 50%;
+        width: 100%;
         margin-top: 10px;
+        margin-left: 0;
         margin-right: 0;
     }
     .card{
         margin: 10px 0;
+        list-style-type: none;
+        padding-inline-start: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
