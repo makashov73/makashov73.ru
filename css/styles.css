@@ -6,7 +6,6 @@ html{
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 a{
     text-decoration: none;
@@ -95,9 +94,11 @@ footer{
     display: block;
 }
 #name{
-    font-size: 23px !important;
+    font-size: 22px !important;
     line-height: 20px !important;
     text-align: center;
+    font-weight: bolder;
+    font-family: 'Open Sans', sans-serif;
 }
 #designation{
     text-align: center;
@@ -114,7 +115,7 @@ footer{
     padding: 0 !important;
     text-align: center;
 }
-#name, #about > p{
+#about > p{
     font-weight: bolder;
     font-family: 'Open Sans', sans-serif;
 }
