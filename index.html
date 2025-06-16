@@ -71,8 +71,10 @@
         </div>
         <div id="info-cards">
             <div class="card">
-                <p id="work-experience-en" lang="en"></p>
-                <p id="work-experience-ru" lang="ru"></p>
+                <p lang="en"><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;<span
+                        id="work-experience-en"></span></p>
+                <p lang="ru"><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;<span
+                        id="work-experience-ru"></span></p>
 
                 <script>
                     function updateWorkExperience(elementId, startYear, template) {
@@ -86,13 +88,13 @@
                     updateWorkExperience(
                         'work-experience-en',
                         startYear,
-                        `<i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Work Experience - {years} years`
+                        `Work Experience - {years} years`
                     );
 
                     updateWorkExperience(
                         'work-experience-ru',
                         startYear,
-                        `<i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Опыт работы - {years} лет`
+                        `Опыт работы - {years} лет`
                     );
                 </script>
                 <ul>
