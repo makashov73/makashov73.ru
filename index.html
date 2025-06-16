@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <title>
         Makashov Vladislav
@@ -12,10 +13,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
+
 <body>
     <div id="inner-nav">
         <div id="language-switch">
-            <a href="?lang=en">English</a> | 
+            <a href="?lang=en">English</a> |
             <a href="?lang=ru">Русский</a>
         </div>
     </div>
@@ -24,95 +26,157 @@
             <div id="image">
                 <img id="profile-photo" src="images/profile.jpg" alt="Profile">
             </div>
-            <p id="name" lang="en">Makashov Vladislav<br><span id="email"><i class="far fa-envelope"></i>&nbsp;<a href="mail:makashov73@gmail.com" title="Send e-mail">makashov73@gmail.com</a></span></p>
-            <p id="name" lang="ru">Макашов Владислав<br><span id="email"><i class="far fa-envelope"></i>&nbsp;<a href="mail:makashov73@gmail.com" title="Отправить сообщение">makashov73@gmail.com</a></span></p>
+            <p id="name" lang="en">Makashov Vladislav<br><span id="email"><i class="far fa-envelope"></i>&nbsp;<a
+                        href="mail:makashov73@gmail.com" title="Send e-mail">makashov73@gmail.com</a></span></p>
+            <p id="name" lang="ru">Макашов Владислав<br><span id="email"><i class="far fa-envelope"></i>&nbsp;<a
+                        href="mail:makashov73@gmail.com" title="Отправить сообщение">makashov73@gmail.com</a></span></p>
             <p id="designation" lang="en">Tech Lead QA<br><span id="college">at MTS Digital<br>Moscow, Russia</span></p>
-            <p id="designation" lang="ru">Технический руководитель группы тестирования<br><span id="college">в МТС Диджитал<br>Москва, Россия</span></p>
+            <p id="designation" lang="ru">Технический руководитель группы тестирования<br><span id="college">в МТС
+                    Диджитал<br>Москва, Россия</span></p>
             <div id="social-links">
                 <a href="https://t.me/mkv73" title="Telegram"><i class="fab fa-telegram stroke-transparent"></i></a>
-                <a href="https://www.linkedin.com/in/mkv73/" title="Linked In"><i class="fab fa-linkedin-in stroke-transparent"></i></a>
-                <a href="https://github.com/makashov73" title="GitHub"><i class="fab fa-github stroke-transparent"></i></a>
+                <a href="https://www.linkedin.com/in/mkv73/" title="Linked In"><i
+                        class="fab fa-linkedin-in stroke-transparent"></i></a>
+                <a href="https://github.com/makashov73" title="GitHub"><i
+                        class="fab fa-github stroke-transparent"></i></a>
                 <a href="skype:so_onic?call" title="Skype"><i class="fab fa-skype stroke-transparent"></i></a>
             </div>
             <hr style="width: 100%;">
             <div id="about">
                 <p style="display:inline;" lang="en">About</p>
                 <p style="display:inline;" lang="ru">Обо мне</p>
-                <p id="year-graduation" lang="en">Year of Graduation<br><strong style="font-size: 12px;">July, 2016</strong></p>
-                <p id="year-graduation" lang="ru">Дата выпуска<br><strong style="font-size: 12px;"></strongstyle>Июль, 2016</strong></p>
-                <p id="education" lang="en">Education<br><strong style="font-size: 12px;">Bachelor's degree of Computer Science</strong><br><span style="font-size: 11px;">at Ulyanovsk State Technical University</span></p>
-                <p id="education" lang="ru">Образование<br><strong style="font-size: 12px;">Бакалавр<br>Информационных технологий</strong><br><span style="font-size: 12px;">в УлГТУ</span></p>
-                <p id="more-about" lang="en">More about me<br><span style="font-size: 12px;">33 years old, IT enthusiastic</span></p>
+                <p id="year-graduation" lang="en">Year of Graduation<br><strong style="font-size: 12px;">July,
+                        2016</strong></p>
+                <p id="year-graduation" lang="ru">Дата выпуска<br><strong style="font-size: 12px;"></strongstyle>Июль,
+                        2016</strong></p>
+                <p id="education" lang="en">Education<br><strong style="font-size: 12px;">Bachelor's degree of Computer
+                        Science</strong><br><span style="font-size: 11px;">at Ulyanovsk State Technical
+                        University</span></p>
+                <p id="education" lang="ru">Образование<br><strong style="font-size: 12px;">Бакалавр<br>Информационных
+                        технологий</strong><br><span style="font-size: 12px;">в УлГТУ</span></p>
+                <p id="more-about" lang="en">
+                    <script>
+                        function calculateAge(birthYear) {
+                            const currentYear = new Date().getFullYear();
+                            return currentYear - birthYear;
+                        }
+                        const birthYear = 1992;
+                        const age = calculateAge(birthYear);
+                        const ageGenerated = document.getElementById('more-about');
+                        ageGenerated.innerHTML = `More about me<br><span style="font-size: 12px;">${age} years old, IT enthusiastic</span>`;
+                    </script>
+                </p>
                 <p id="more-about" lang="ru"></p>
             </div>
         </div>
         <div id="info-cards">
-           <div class="card">
-                <p lang="en"><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Work Experience - 9 years</p>
-                <p lang="ru"><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Опыт работы - 9 лет</p>
+            <div class="card">
+                <p id="work-experience-en" lang="en"></p>
+                <p id="work-experience-ru" lang="ru"></p>
+
+                <script>
+                    function updateWorkExperience(elementId, startYear, template) {
+                        const currentYear = new Date().getFullYear();
+                        const years = currentYear - startYear;
+                        document.getElementById(elementId).innerHTML = template.replace('{years}', years);
+                    }
+
+                    const startYear = 2016;
+
+                    updateWorkExperience(
+                        'work-experience-en',
+                        startYear,
+                        `<i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Work Experience - {years} years`
+                    );
+
+                    updateWorkExperience(
+                        'work-experience-ru',
+                        startYear,
+                        `<i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Опыт работы - {years} лет`
+                    );
+                </script>
                 <ul>
                     <li>
-                        <p lang="en" class="tags">Senior QA automation<br><span><img id="mts-logo" src="images/mts.png" alt="MTS-Logo" width="16"/>&nbsp;&nbsp;LLC MWS | <span>11/2023 - present</span></span></p>
-                        <p lang="ru" class="tags">Ведущий инженер функциональной группы тестирования<br><span><img id="mts-logo" src="images/mts.png" alt="MTS-Logo" width="16"/>&nbsp;&nbsp;ООО "МТС Веб Сервисы" | <span>11/2023 - настоящее время</span></span></p>
+                        <p lang="en" class="tags">Senior QA automation<br><span><img id="mts-logo" src="images/mts.png"
+                                    alt="MTS-Logo" width="16" />&nbsp;&nbsp;LLC MWS | <span>11/2023 -
+                                    present</span></span></p>
+                        <p lang="ru" class="tags">Ведущий инженер функциональной группы тестирования<br><span><img
+                                    id="mts-logo" src="images/mts.png" alt="MTS-Logo" width="16" />&nbsp;&nbsp;ООО "МТС
+                                Веб Сервисы" | <span>11/2023 - настоящее время</span></span></p>
                         <a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
                     </li>
                     <li>
-                        <p lang="en" class="tags">Middle Manual QA Engineer<br><span><img id="dionsoft-logo" src="images/dionsoft.jpg" alt="DionSoft-Logo" width="16"/>&nbsp;&nbsp;LLC Dion Soft | <span>07/2023 - 11/2023</span></span></p>
-                        <p lang="ru" class="tags">Старший специалист по тестированию ПО<br><span><img id="dionsoft-logo" src="images/dionsoft.jpg" alt="DionSoft-Logo" width="16"/>&nbsp;&nbsp;ООО "Дион Софт" | <span>07/2023 - 11/2023</span></span></p>
+                        <p lang="en" class="tags">Middle Manual QA Engineer<br><span><img id="dionsoft-logo"
+                                    src="images/dionsoft.jpg" alt="DionSoft-Logo" width="16" />&nbsp;&nbsp;LLC Dion Soft
+                                | <span>07/2023 - 11/2023</span></span></p>
+                        <p lang="ru" class="tags">Старший специалист по тестированию ПО<br><span><img id="dionsoft-logo"
+                                    src="images/dionsoft.jpg" alt="DionSoft-Logo" width="16" />&nbsp;&nbsp;ООО "Дион
+                                Софт" | <span>07/2023 - 11/2023</span></span></p>
                         <a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
                     </li>
                     <li>
-                        <p lang="en" class="tags">Technical Writer<br><span><img id="tecforce-logo" src="images/tecforce.jpg" alt="TecForce-Logo" width="16"/>&nbsp;&nbsp;LLC TecForce | <span>09/2022 - 07/2023</span></span></p>
-                        <p lang="ru" class="tags">Технический писатель<br><span><img id="tecforce-logo" src="images/tecforce.jpg" alt="TecForce-Logo" width="16"/>&nbsp;&nbsp;ООО "ТекФорс Инжиниринг" | <span>09/2022 - 07/2023</span></span></p>
+                        <p lang="en" class="tags">Technical Writer<br><span><img id="tecforce-logo"
+                                    src="images/tecforce.jpg" alt="TecForce-Logo" width="16" />&nbsp;&nbsp;LLC TecForce
+                                | <span>09/2022 - 07/2023</span></span></p>
+                        <p lang="ru" class="tags">Технический писатель<br><span><img id="tecforce-logo"
+                                    src="images/tecforce.jpg" alt="TecForce-Logo" width="16" />&nbsp;&nbsp;ООО "ТекФорс
+                                Инжиниринг" | <span>09/2022 - 07/2023</span></span></p>
                         <a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
                     </li>
                     <li>
-                        <p lang="en" class="tags">QA/QC Engineer<br><span><img id="galenit-logo" src="images/galen.jpg" alt="GalenIT-Logo" width="16"/>&nbsp;&nbsp;LLC Galen IT | <span>10/2021 - 09/2022</span></span></p>
-                        <p lang="ru" class="tags">Специалист по контролю качества ПО<br><span><img id="galenit-logo" src="images/galen.jpg" alt="GalenIT-Logo" width="16"/>&nbsp;&nbsp;ООО "Гален АйТи" | <span>10/2021 - 09/2022</span></span></p>
+                        <p lang="en" class="tags">QA/QC Engineer<br><span><img id="galenit-logo" src="images/galen.jpg"
+                                    alt="GalenIT-Logo" width="16" />&nbsp;&nbsp;LLC Galen IT | <span>10/2021 -
+                                    09/2022</span></span></p>
+                        <p lang="ru" class="tags">Специалист по контролю качества ПО<br><span><img id="galenit-logo"
+                                    src="images/galen.jpg" alt="GalenIT-Logo" width="16" />&nbsp;&nbsp;ООО "Гален АйТи"
+                                | <span>10/2021 - 09/2022</span></span></p>
                         <a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
                     </li>
                     <li>
-                        <p lang="en" class="tags">System Administrator<br><span><img id="teplokom-logo" src="images/teplokom.jpg" alt="Teplokom-Logo" width="16"/>&nbsp;&nbsp;Teplokom | <span>09/2020 - 10/2021</span></span></p>
-                        <p lang="ru" class="tags">Системный администратор<br><span><img id="teplokom-logo" src="images/teplokom.jpg" alt="Teplokom-Logo" width="16"/>&nbsp;&nbsp;УМУП "Теплоком" | <span>09/2020 - 10/2021</span></span></p>
+                        <p lang="en" class="tags">System Administrator<br><span><img id="teplokom-logo"
+                                    src="images/teplokom.jpg" alt="Teplokom-Logo" width="16" />&nbsp;&nbsp;Teplokom |
+                                <span>09/2020 - 10/2021</span></span></p>
+                        <p lang="ru" class="tags">Системный администратор<br><span><img id="teplokom-logo"
+                                    src="images/teplokom.jpg" alt="Teplokom-Logo" width="16" />&nbsp;&nbsp;УМУП
+                                "Теплоком" | <span>09/2020 - 10/2021</span></span></p>
                         <a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
                     </li>
                     <li>
-                        <p lang="en" class="tags">Software Engineer<br><span><img id="aviastarsp-logo" src="images/aviastar.jpg" alt="AviastarSP-Logo" width="16"/>&nbsp;&nbsp;JSC Aviastar-SP | <span>09/2016 - 06/2019</span></span></p>
-                        <p lang="ru" class="tags">Инженер-программист 2 категории<br><span><img id="aviastarsp-logo" src="images/aviastar.jpg" alt="AviastarSP-Logo" width="16"/>&nbsp;&nbsp;АО "Авиастар-СП" | <span>09/2016 - 06/2019</span></span></p>
+                        <p lang="en" class="tags">Software Engineer<br><span><img id="aviastarsp-logo"
+                                    src="images/aviastar.jpg" alt="AviastarSP-Logo" width="16" />&nbsp;&nbsp;JSC
+                                Aviastar-SP | <span>09/2016 - 06/2019</span></span></p>
+                        <p lang="ru" class="tags">Инженер-программист 2 категории<br><span><img id="aviastarsp-logo"
+                                    src="images/aviastar.jpg" alt="AviastarSP-Logo" width="16" />&nbsp;&nbsp;АО
+                                "Авиастар-СП" | <span>09/2016 - 06/2019</span></span></p>
                         <a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
                     </li>
-                </u>
+                    </u>
             </div>
-        </div> 
+        </div>
     </div>
     <footer>
         mkv73 © 2024
-    </footer> 
+    </footer>
 </body>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script>
-$(document).ready(function() {
-    var lang = getParameterByName('lang') || localStorage.getItem('lang') || 'en';
-    $("[lang]").hide();
-    $("[lang='" + lang + "']").show();
-    $('#lang-switch').change(function() {
-        var selectedLang = $(this).val();
-        localStorage.setItem('lang', selectedLang);
-        window.location.href = '?lang=' + selectedLang;
+    $(document).ready(function () {
+        var lang = getParameterByName('lang') || localStorage.getItem('lang') || 'en';
+        $("[lang]").hide();
+        $("[lang='" + lang + "']").show();
+        $('#lang-switch').change(function () {
+            var selectedLang = $(this).val();
+            localStorage.setItem('lang', selectedLang);
+            window.location.href = '?lang=' + selectedLang;
+        });
     });
-});
-function getParameterByName(name) {
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-    var results = regex.exec(location.search);
-    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
+    function getParameterByName(name) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        var results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
 </script>
 </head>
+
 </html>
-
-
-
-
-
-
