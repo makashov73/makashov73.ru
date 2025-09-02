@@ -27,16 +27,15 @@
                 <img id="profile-photo" src="images/profile.jpg" alt="Profile">
             </div>
             <p id="name" lang="en">Makashov Vladislav<br><span id="email">
-                    <nobr><i class="far fa-envelope"></i>&nbsp;<a href="mail:makashov73@gmail.com"
-                            title="Send e-mail">makashov73@gmail.com</a></nobr>
+                    <span style="white-space:nowrap;"><i class="far fa-envelope"></i>&nbsp;<a href="mail:makashov73@gmail.com"
+                            title="Send e-mail">makashov73@gmail.com</a></span>
                 </span></p>
             <p id="name" lang="ru">Макашов Владислав<br><span id="email">
-                    <nobr><i class="far fa-envelope"></i>&nbsp;<a href="mail:makashov73@gmail.com"
-                            title="Отправить сообщение">makashov73@gmail.com</a></nobr>
+                    <span style="white-space:nowrap;"><i class="far fa-envelope"></i>&nbsp;<a href="mail:makashov73@gmail.com"
+                            title="Отправить сообщение">makashov73@gmail.com</a></span>
                 </span></p>
-            <p id="designation" lang="en">Tech Lead QA<br><span id="college">at MTS Digital<br>Moscow, Russia</span></p>
-            <p id="designation" lang="ru">Технический руководитель группы тестирования<br><span id="college">в МТС
-                    Диджитал<br>Москва, Россия</span></p>
+            <p id="designation" lang="en">Senior QA automation<br><span id="college">at MTS Web Services<br>Moscow, Russia</span></p>
+            <p id="designation" lang="ru">Ведущий инженер группы тестирования<br><span id="college">в МТС Веб Сервисы<br>Москва, Россия</span></p>
             <div id="social-links">
                 <a href="https://t.me/mkv73" title="Telegram"><i class="fab fa-telegram stroke-transparent"></i></a>
                 <a href="https://www.linkedin.com/in/mkv73/" title="Linked In"><i
@@ -57,19 +56,6 @@
                         University</span></p>
                 <p id="education" lang="ru">Образование<br><strong style="font-size: 12px;">Бакалавр<br>Информационных
                         технологий</strong><br><span style="font-size: 12px;">в УлГТУ</span></p>
-                <p id="more-about" lang="en">
-                    <script>
-                        function calculateAge(birthYear) {
-                            const currentYear = new Date().getFullYear();
-                            return currentYear - birthYear;
-                        }
-                        const birthYear = 1992;
-                        const age = calculateAge(birthYear);
-                        const ageGenerated = document.getElementById('more-about');
-                        ageGenerated.innerHTML = `More about me<br><span style="font-size: 12px;">${age} years old, IT enthusiastic</span>`;
-                    </script>
-                </p>
-                <p id="more-about" lang="ru"></p>
             </div>
         </div>
         <div id="info-cards">
@@ -159,9 +145,13 @@
             </div>
         </div>
     </div>
-    <footer>
-        mkv73 © 2024
-    </footer>
+    <footer id="site-footer">mkv73 © <span id="footer-year"></span></footer>
+    <script>
+        (function updateFooterYear(elementId, template) {
+            const currentYear = new Date().getFullYear();
+            document.getElementById(elementId).innerHTML = template.replace('{year}', currentYear);
+        })('site-footer', 'mkv73 © {year}');
+    </script>
 </body>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script>

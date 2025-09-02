@@ -71,8 +71,8 @@ footer{
 }
 #image,#profile-photo{
     position: relative;
-    width: 128px;
-    height: 128px;
+    width: 180px;
+    height: 180px;
     box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
     border-radius: 12px;
     margin: auto;
@@ -124,7 +124,7 @@ footer{
     font-weight: bold !important;
     font-family: 'Cutive Mono',monospace;
 }
-#college,#email,#year-graduation,#education,#more-about,#telephone,#fax{
+#college,#email,#year-graduation,#education,#telephone,#fax{
     color: #555;
     font-size: 13.5px;
 }
@@ -232,23 +232,6 @@ strong,span{
 .tags span span{
     color: #738f93;
 }
-/*
-@media screen and (max-width:1081px){
-    #profile {
-        flex: 0;
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-    #container {
-        position: relative;
-        display: flex;
-        max-width: 75%;
-        flex-direction: row;
-        justify-content: center;
-    }
-}*/
 @media screen and (max-width:1080px){
     #container{
         display: flex;
