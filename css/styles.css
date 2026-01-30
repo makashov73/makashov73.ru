@@ -109,7 +109,6 @@ footer{
     display: inline-block;
     width: 100%;
 }
-
 #about{
     font-size: 20px !important;
     padding: 0 !important;
@@ -143,11 +142,6 @@ strong,span{
 #social-links a{
     margin: 0 10px;
 }
-#edit-intro{
-    display: block;
-    color:#097bbf;
-    font-family: 'Nunito', sans-serif;
-}
 .fab{
     font-size: 2.5em;
 }
@@ -161,11 +155,7 @@ strong,span{
     top: 4px;
     right: 8px;
 }
-.edit{
-    top: 19px;
-    right: 10px;
-}
-#about > a, .edit{
+#about > a {
     position: absolute;
     font-size: 15px !important;
 }
