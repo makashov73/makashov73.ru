@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <title>
@@ -8,11 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Cutive+Mono|Open+Sans">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:wght@400;700&family=Cutive+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
+</head>
 
 <body>
     <div id="inner-nav">
@@ -88,11 +92,11 @@
                 </script>
                 <ul>
                     <li>
-                        <p lang="en" class="tags">Software Testing Engineer<br><span><img id="mts-logo" src="images/mts.png"
+                        <p lang="en" class="tags">Software Testing Engineer<br><span><img id="mts-logo" src="images/mts.webp"
                                     alt="MTS-Logo" width="16" />&nbsp;&nbsp;LLC MTS Web Services | <span>11/2023 -
                                     present</span></span></p>
                         <p lang="ru" class="tags">Ведущий инженер функциональной группы тестирования<br><span><img
-                                    id="mts-logo" src="images/mts.png" alt="MTS-Logo" width="16" />&nbsp;&nbsp;ООО "МТС
+                                    id="mts-logo" src="images/mts.webp" alt="MTS-Logo" width="16" />&nbsp;&nbsp;ООО "МТС
                                 Веб Сервисы" | <span>11/2023 - настоящее время</span></span></p>
                         <a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
                     </li>
@@ -153,25 +157,35 @@
         })('site-footer', 'mkv73 © {year}');
     </script>
 </body>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
 <script>
-    $(document).ready(function () {
-        var lang = getParameterByName('lang') || localStorage.getItem('lang') || 'en';
-        $("[lang]").hide();
-        $("[lang='" + lang + "']").show();
-        $('#lang-switch').change(function () {
-            var selectedLang = $(this).val();
+document.addEventListener("DOMContentLoaded", function () {
+    var lang = getParameterByName('lang') || localStorage.getItem('lang') || 'en';
+    document.querySelectorAll("[lang]").forEach(function(el) {
+        el.style.display = 'none';
+    });
+
+    var activeEls = document.querySelectorAll("[lang='" + lang + "']");
+    activeEls.forEach(function(el) {
+        el.style.display = '';
+    });
+
+    var langSwitch = document.getElementById('lang-switch');
+    if (langSwitch) {
+        langSwitch.addEventListener("change", function () {
+            var selectedLang = this.value;
             localStorage.setItem('lang', selectedLang);
             window.location.href = '?lang=' + selectedLang;
         });
-    });
-    function getParameterByName(name) {
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-        var results = regex.exec(location.search);
-        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
+});
+
+function getParameterByName(name) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 </script>
-</head>
 
 </html>
