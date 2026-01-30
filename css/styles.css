@@ -109,6 +109,7 @@ footer{
     display: inline-block;
     width: 100%;
 }
+
 #about{
     font-size: 20px !important;
     padding: 0 !important;
@@ -120,8 +121,8 @@ footer{
 }
 #email{
     font-size: 16px !important;
-    font-weight: bold !important;
-    font-family: 'Cutive Mono',monospace;
+    font-weight: normal !important;
+    font-family: 'Cutive Mono', monospace;
 }
 #college,#email,#year-graduation,#education,#telephone,#fax{
     color: #555;
@@ -142,6 +143,11 @@ strong,span{
 #social-links a{
     margin: 0 10px;
 }
+#edit-intro{
+    display: block;
+    color:#097bbf;
+    font-family: 'Nunito', sans-serif;
+}
 .fab{
     font-size: 2.5em;
 }
@@ -155,7 +161,11 @@ strong,span{
     top: 4px;
     right: 8px;
 }
-#about > a {
+.edit{
+    top: 19px;
+    right: 10px;
+}
+#about > a, .edit{
     position: absolute;
     font-size: 15px !important;
 }
